@@ -3,7 +3,7 @@ WebAssembly Specification
 
 .. only:: html
 
-   | Release |release| (Draft, |today|)
+   | Release |release| + Constant-Time (Draft, |today|)
 
    | Editor: Andreas Rossberg
 
