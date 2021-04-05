@@ -18,7 +18,7 @@ With this proposal, we would like to achieve the following:
 1. Minimize performance overhead, both as a result of enabling processor features like `PSTATE.DIT` and of missed opportunities for optimization.
 
 ## Design
-We introduce new .ct instructions that, assuming processor and compiler support, guarantee that they exhibit runtime independent of the values supplied by their inputs. 
+We introduce new .ct instructions that, assuming processor and compiler support, are guaranteed to exhibit runtime independent of the values supplied by their inputs. 
 
 Some exceptions are memory load and store instructions, which exhibit runtime independent of the values being loaded and stored, not of the addresses. 
 
@@ -31,7 +31,7 @@ A hypothetical JIT compiler that supports both this proposal and ARMv8.4+ would,
 We would also like to support SIMD instructions in the future, and examine how other architectures' future constant-time guarantees can be leveraged by Wasm. We would also like to add some feature-detection bits so that especially security-critical code can refuse to run when the runtime or the architecture is unable to provide the necessary timing guarantees.
 
 ## Index of Additional Instructions
-To make it easy to port existing code, we propose adding a new single-byte (shown as CT in the below table) and making the new instructions' encoding match the preexisting ones with the prefix attached. 
+To make it easy to port existing code, we propose adding a new single-byte prefix (shown as CT in the below table) and assigning opcodes that match the preexisting ones with the prefix attached. 
 
 |Instruction              |Opcode |
 |-------------------------|-------|
